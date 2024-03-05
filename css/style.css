@@ -1,6 +1,7 @@
 :root {
     --white: #ffffff;
     --black:#212121;
+    --red:#bb0000;
 }
 
 *{
@@ -82,20 +83,29 @@ input{
     padding: 10px;
     color: var(--black);
     margin: 5px 0;
-
 }
+
 .seccion-tarea i {
     font-size: 25px;
     color: black;
-
 }
 
 .seccion-tarea > ul p {
     font-size: 1.2rem;
-    color: black;
 
 }
 
 .seccion-tarea i:hover {
     cursor: pointer;
 }
+
+.taskText{
+    color: black;
+}
+
+.cancelTask{
+    text-decoration: line-through;
+    color : var(--red)
+}
+
+
