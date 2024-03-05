@@ -16,6 +16,8 @@ body{
     background-color: var(--black);
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 input{
@@ -97,6 +99,7 @@ input{
 
 .seccion-tarea i:hover {
     cursor: pointer;
+    color: var(--red);
 }
 
 .taskText{
