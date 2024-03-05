@@ -8,6 +8,12 @@ const variables = {
     uncheck: 'fa-circle',
     lineThrough: 'completeTask',
     list: [],
+    setOldList: function(oldList){
+        this.list=oldList
+    },
+    setOldId: function(oldId){
+        this.id = oldId
+    },
     incraseId: function () {
         this.id = this.id + 1;
     },

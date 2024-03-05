@@ -1,6 +1,5 @@
 import variables from "./variables.js"
-const addTask = () => {
-    const task = variables.inNewTask.value;
+const addTask = (task) => {
     if (task) {
         const newElement = /*html*/`
         <li id="task">
@@ -10,11 +9,10 @@ const addTask = () => {
         </li>
         `
         variables.taskList.insertAdjacentHTML("beforeend", newElement)
+        variables.pushList(task, variables.id, false, false)
+        variables.inNewTask.value = "";
+        variables.incraseId();
+        localStorage.setItem('ToDo', JSON.stringify(variables.list))
     }
-    variables.inNewTask.value = "";
-    variables.pushList(task, variables.id, false, false)
-    variables.incraseId();
-    localStorage.setItem('ToDo', JSON.stringify(variables.list))
-    // console.log(variables.list);
 };
 export default addTask

@@ -3,22 +3,29 @@ import addTask from "./addTask.js";
 import completeTask from "./completeTask.js";
 import deleteTask from "./deleteTask.js";
 import setDate from "./date.js";
+import renderOldList from "./renderOldList.js";
 
 // Llamando a la funcion para setear la fecha
 setDate()
+
+// Render from local Storage
+let data = localStorage.getItem("ToDo")
+if (data) {
+    renderOldList(data)
+}
 
 // Listeners para agregar tareas
 variables.butAddNewTask.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
-    addTask();
+    addTask(variables.inNewTask.value);
 })
 
 document.addEventListener("keyup", (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (e.key == "Enter") {
-        addTask()
+        addTask(variables.inNewTask.value);
     }
 })
 
