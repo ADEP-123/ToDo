@@ -1,10 +1,13 @@
 import variables from "./variables.js"
-const addTask = (task) => {
+const addTask = (task, id, realizado, eliminado) => {
+    if (eliminado) { return };
+    const markReal = realizado ? variables.check : variables.uncheck
+    const line = realizado ? variables.lineThrough : "";
     const newElement = /*html*/`
     <li id="task">
-        <i class="far fa-circle co" id="0" data="realizado"></i>
-        <p class="taskText">${task}</p>
-        <i class="fas fa-trash de" data="eliminado" id="0"></i>
+        <i class="far ${markReal}" id="${id}" data="realizado"></i>
+        <p class="taskText ${line}">${task}</p>
+        <i class="fas fa-trash de" id="${id}" data="eliminado" ></i>
     </li>
     `
     variables.taskList.insertAdjacentHTML("beforeend", newElement)

@@ -103,7 +103,7 @@ input{
     color: black;
 }
 
-.cancelTask{
+.completeTask{
     text-decoration: line-through;
     color : var(--red)
 }
