@@ -54,12 +54,12 @@ input{
 }
 .agregar-tarea input::placeholder {
    font-size: 1.1rem;
-   color: var(--purple);
+   color: black;
 }
 
 .agregar-tarea i{
     font-size: 50px;
-    color: var(--purple);
+    color: black;
 
 }
 .agregar-tarea i:hover {
