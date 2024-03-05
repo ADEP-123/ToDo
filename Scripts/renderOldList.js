@@ -5,7 +5,10 @@ const renderOldList = (data) => {
     const oldList = JSON.parse(data);
     const oldId = oldList[oldList.length - 1].id;
     oldList.forEach(element => {
-        addTask(element.nombre)
+        console.log(element.eliminado);
+        if (element.eliminado == false) {
+            addTask(element.nombre)
+        }
     });
     variables.setOldId(oldId)
 }
