@@ -2,10 +2,12 @@ import variables from "./variables.js";
 import addTask from "./addTask.js";
 import completeTask from "./completeTask.js";
 import deleteTask from "./deleteTask.js";
+import setDate from "./date.js";
+
+// Llamando a la funcion para setear la fecha
+setDate()
 
 // Listeners para agregar tareas
-
-//Funcion para manejar 
 variables.butAddNewTask.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
