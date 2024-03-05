@@ -1,5 +1,5 @@
-import addTask from "./addTask";
-import variables from "./variables";
+import addTask from "./addTask.js";
+import variables from "./variables.js";
 
 const renderOldList = (data) => {
     console.log(data);
