@@ -6,13 +6,15 @@ import setDate from "./date.js";
 import renderOldList from "./renderOldList.js";
 import currentTime from "./setTime.js";
 import iniciadorApp from "./iniciadorApp.js";
+import lectorLS from "./lectoLocalStorage.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // Listener para iniciar la app
+    const data = lectorLS()
     document.querySelector("#submitNameBtn").addEventListener("click", () => {
         const userName = document.querySelector("#userNameInput").value;
         if (userName.trim() !== "") {
-            iniciadorApp(userName)
+            iniciadorApp(userName, data)
         } else {
             alert("Por favor ingresa un nombre para continuar")
         }
@@ -26,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(currentTime, 1000);
 
     // Render from local Storage
-    let data = localStorage.getItem("ToDo")
-    renderOldList(data)
+    // let data = localStorage.getItem("ToDo")
+    // renderOldList(data)
 
     // Listeners para agregar tareas
     variables.butAddNewTask.addEventListener("click", (e) => {
