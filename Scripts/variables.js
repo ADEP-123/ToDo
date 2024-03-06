@@ -1,3 +1,11 @@
+class Tarea {
+    constructor(nombre, id, realizado, eliminado) {
+        this.nombre = nombre,
+            this.id = id,
+            this.realizado = realizado,
+            this.eliminado = eliminado
+    }
+}
 const variables = {
     fecha: document.querySelector("#fecha"),
     reloj: document.querySelector("#reloj"),
@@ -9,19 +17,16 @@ const variables = {
     uncheck: 'fa-circle',
     lineThrough: 'completeTask',
     list: [],
-    setOldId: function(oldId){
+    setOldId: function (oldId) {
         this.id = oldId
     },
     incraseId: function () {
         this.id = this.id + 1;
     },
     pushList: function (nombre, id, realizado, eliminado) {
-        this.list.push({
-            nombre,
-            id,
-            realizado,
-            eliminado
-        })
+        const nuevaTarea = new Tarea(nombre, id, realizado, eliminado)
+        this.list.push(nuevaTarea)
     }
 }
+
 export default variables

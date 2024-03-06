@@ -3,12 +3,14 @@ import variables from "./variables.js";
 
 const renderOldList = (data) => {
     let emptyRender = true;
+    let oldList = "";
+    let oldId = 0;
     if (data) {
-        const oldList = JSON.parse(data);
-        const oldId = oldList[oldList.length - 1].id;
+        oldList = JSON.parse(data);
+        oldId = oldList[oldList.length - 1].id;
         oldList.forEach(element => {
             if (element.eliminado == false) {
-                addTask(element.nombre)
+                addTask(element.nombre,element.realizado)
                 emptyRender = false;
             }
         });

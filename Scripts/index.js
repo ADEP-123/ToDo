@@ -20,14 +20,14 @@ renderOldList(data)
 variables.butAddNewTask.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
-    addTask(variables.inNewTask.value);
+    addTask(variables.inNewTask.value,false);
 })
 
 document.addEventListener("keyup", (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (e.key == "Enter") {
-        addTask(variables.inNewTask.value);
+        addTask(variables.inNewTask.value,false);
     }
 })
 
