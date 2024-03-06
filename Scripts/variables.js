@@ -18,6 +18,7 @@ const variables = {
     uncheck: 'fa-circle',
     lineThrough: 'completeTask',
     list: [],
+    cronStatus:false,
     setUserName: function (newUsername) {
         if (this.list.length ===0){
             this.list.push(newUsername)
@@ -33,6 +34,9 @@ const variables = {
     pushList: function (nombre, id, realizado, eliminado) {
         const nuevaTarea = new Tarea(nombre, id, realizado, eliminado)
         this.list.push(nuevaTarea)
+    },
+    changeCronStatus: function(){
+        this.cronStatus = !this.cronStatus
     }
 }
 

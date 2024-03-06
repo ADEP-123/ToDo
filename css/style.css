@@ -20,11 +20,25 @@ body{
     height: 100vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 input{
     color: black;
 }
+
+button{
+    border-radius: 8px;
+    color: black;
+    padding: 5px;
+    margin-top: 5px;
+}
+button:hover{
+    box-shadow: 1px 1px 20px var(--blue2);
+    cursor: pointer;
+}
+
 
 /* ---Vista inicial--- */
 .initial-view {
@@ -45,16 +59,6 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.initial-view button{
-    border-radius: 8px;
-    color: black;
-    padding: 5px;
-    margin-top: 5px;
-}
-.initial-view button:hover{
-    box-shadow: 1px 1px 20px var(--blue2);
-    cursor: pointer;
 }
 .initial-view input{
     margin: 5px;
@@ -84,7 +88,7 @@ input{
     from {
         opacity: 0;
     }
-
+    
     to {
         opacity: 1;
     }
@@ -95,16 +99,33 @@ input{
     max-height: 100%;
 }
 
-/* ---Perfil--- */
-.container {
-    display: none;
-    max-width: 80%;
-    width: 400px;
-    height: 600px;
-    margin: 0 auto;
+/* ---Panel superior--- */
+#fecHora{
+    color: var(--blue1);
+    display: flex;
+    text-shadow: 0 0 20px var(--blue2),  0 0 20px rgba(10, 175, 230, 0);
+    flex-direction: column-reverse;
+}
+#reloj{
     text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 70px;
+    padding: 5px 0;
+}
+#mensBievenida{
+    font-size: 80px;
+}
+#panelSup{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ---panelSup--- */
+#app, #panelSup{
+    display: none;
     opacity: 0;
-    animation: slideIn 0.5s forwards; /* Agrega una animación de deslizamiento */
+    animation: slideIn 0.5s forwards;
+    width: 100%;
 }
 
 @keyframes slideIn {
@@ -119,18 +140,18 @@ input{
     }
 }
 
-#fecHora{
-    color: var(--blue1);
+.container {
     display: flex;
-    text-shadow: 0 0 20px var(--blue2),  0 0 20px rgba(10, 175, 230, 0);
-    flex-direction: column-reverse;
-}
-#reloj{
+    flex-direction: column  ;
+    max-width: 80%;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
     text-align: center;
-    letter-spacing: 0.05em;
-    font-size: 80px;
-    padding: 5px 0;
+
 }
+
+
 
 /* ---Agregar Tarea--- */
 .agregar-tarea {
@@ -216,3 +237,20 @@ input{
 }
 
 
+/* --Seccion pomodoro-- */
+#taskPom {
+    align-items: center;
+    justify-content: center;
+}
+
+#cronometro{
+    color: var(--blue1);
+    text-shadow: 0 0 20px var(--blue2),  0 0 20px rgba(10, 175, 230, 0);
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 40px;
+    padding: 5px 0;
+}
+#robotStatus{
+    width: 150px;
+}
