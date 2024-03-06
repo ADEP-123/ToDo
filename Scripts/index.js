@@ -14,9 +14,8 @@ setInterval(currentTime, 1000);
 
 // Render from local Storage
 let data = localStorage.getItem("ToDo")
-if (data) {
-    renderOldList(data)
-}
+renderOldList(data)
+
 // Listeners para agregar tareas
 variables.butAddNewTask.addEventListener("click", (e) => {
     e.preventDefault();
