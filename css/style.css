@@ -238,9 +238,23 @@ button:hover{
 
 
 /* --Seccion pomodoro-- */
-#taskPom {
-    align-items: center;
-    justify-content: center;
+#selectTaskPom {
+    text-align: center;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 10px;
+    color: var(--black);
+    margin: 5px 0;
+    width: 80%;
+    height: 70px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid black;
+}
+
+#selectTaskPom option {
+    color: var(--black);
 }
 
 #cronometro{
@@ -253,4 +267,5 @@ button:hover{
 }
 #robotStatus{
     width: 150px;
+    transition: opacity 0.5s ease-in-out;
 }

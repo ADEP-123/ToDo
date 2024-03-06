@@ -64,8 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
         e.stopPropagation();
         if (e.target.id == "resCronBut") {
             variables.changeCronStatus()
-        }else if(e.target.id == "stopCronBut"){
+        } else if (e.target.id == "stopCronBut") {
             variables.changeCronStatus()
+        }
+        if (variables.cronStatus == true) {
+            document.querySelector("#robotStatus").setAttribute("src", "img/restingReobot.gif")
+        } else {
+            document.querySelector("#robotStatus").setAttribute("src", "img/restingReobot.gif")
         }
 
     })

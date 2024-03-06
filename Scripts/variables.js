@@ -8,6 +8,7 @@ class Tarea {
 }
 const variables = {
     userName: "",
+    pomVarId:0,
     fecha: document.querySelector("#fecha"),
     reloj: document.querySelector("#reloj"),
     taskList: document.querySelector("#taskList"),
@@ -19,6 +20,9 @@ const variables = {
     lineThrough: 'completeTask',
     list: [],
     cronStatus:false,
+    incrasePomVarId: function(){
+        this.pomVarId = this.pomVarId +1
+    },
     setUserName: function (newUsername) {
         if (this.list.length ===0){
             this.list.push(newUsername)
