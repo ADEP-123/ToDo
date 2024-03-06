@@ -1,6 +1,9 @@
 import variables from "./variables.js"
 const addTask = (task) => {
     if (task) {
+        if(document.querySelector("#loadingBot")){
+            document.querySelector("#loadingBot").parentNode.removeChild(document.querySelector("#loadingBot"));
+        }
         const newElement = /*html*/`
         <li id="task">
             <i class="far ${variables.uncheck}" id="${variables.id}" data="realizado"></i>

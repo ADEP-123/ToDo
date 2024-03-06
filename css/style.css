@@ -1,6 +1,6 @@
 :root {
     --white: #ffffff;
-    --black:#212121;
+    --black:#1e2025;
     --red:#bb0000;
 }
 
@@ -31,6 +31,18 @@ input{
     height: 600px;
     margin: 0 auto;
     text-align: center;
+}
+#fecHora{
+    color: #daf6ff;
+    display: flex;
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+    flex-direction: column-reverse;
+}
+#reloj{
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 80px;
+    padding: 5px 0;
 }
 
 /* ---Agregar Tarea--- */
@@ -71,6 +83,11 @@ input{
 
 
 /* ---Seccion Tarea--- */
+
+#loadingBot{
+    width: 100%;
+}
+
 .seccion-tarea h3 {
     color: var(--white);
     margin-bottom: 20px;

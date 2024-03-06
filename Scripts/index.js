@@ -4,16 +4,19 @@ import completeTask from "./completeTask.js";
 import deleteTask from "./deleteTask.js";
 import setDate from "./date.js";
 import renderOldList from "./renderOldList.js";
+import currentTime from "./setTime.js";
 
 // Llamando a la funcion para setear la fecha
 setDate()
+
+// Llamando funcion que crea el reloj
+setInterval(currentTime, 1000);
 
 // Render from local Storage
 let data = localStorage.getItem("ToDo")
 if (data) {
     renderOldList(data)
 }
-
 // Listeners para agregar tareas
 variables.butAddNewTask.addEventListener("click", (e) => {
     e.preventDefault();

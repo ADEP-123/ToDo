@@ -1,5 +1,6 @@
 const variables = {
     fecha: document.querySelector("#fecha"),
+    reloj: document.querySelector("#reloj"),
     taskList: document.querySelector("#taskList"),
     inNewTask: document.querySelector("#inNewTask"),
     butAddNewTask: document.querySelector("#butAddNewTask"),
