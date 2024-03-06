@@ -2,6 +2,7 @@ import addTask from "./addTask.js";
 import variables from "./variables.js";
 
 const renderOldList = (data) => {
+    
     let emptyRender = true;
     let oldList = "";
     let oldId = 0;

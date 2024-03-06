@@ -7,6 +7,7 @@ class Tarea {
     }
 }
 const variables = {
+    userName: "",
     fecha: document.querySelector("#fecha"),
     reloj: document.querySelector("#reloj"),
     taskList: document.querySelector("#taskList"),
@@ -17,6 +18,9 @@ const variables = {
     uncheck: 'fa-circle',
     lineThrough: 'completeTask',
     list: [],
+    setUserName: function (newUsername) {
+        this.userName = newUsername
+    },
     setOldId: function (oldId) {
         this.id = oldId
     },

@@ -5,6 +5,16 @@ import deleteTask from "./deleteTask.js";
 import setDate from "./date.js";
 import renderOldList from "./renderOldList.js";
 import currentTime from "./setTime.js";
+import iniciadorApp from "./iniciadorApp.js";
+
+// Listener para iniciar la app
+document.querySelector("#submitNameBtn").addEventListener("click", () => {
+    const userName = document.querySelector("#userNameInput").value;
+    if (userName.trim() !== "") {
+        iniciadorApp(userName)
+    }
+});
+
 
 // Llamando a la funcion para setear la fecha
 setDate()

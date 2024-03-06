@@ -10,13 +10,24 @@
 </head>
 
 <body>
+    <!-- Ventana inicial que pregunta el nombre -->
+    <div id="initialView" class="initial-view">
+        <h2>Bienvenido</h2>
+        <p>Por favor, ingresa tu nombre:</p>
+        <form id="nameForm">
+            <input type="text" id="userNameInput" placeholder="Tu nombre">
+            <button type="button" id="submitNameBtn">Continuar</button>
+        </form>
+    </div>
+
+    <!-- APP -->
     <div class="container">
         <div class="perfil">
             <div id="fecHora">
                 <div id="reloj"></div>
                 <div id="fecha"></div>
             </div>
-            <h1>Hola usuario!</h1>
+            <h1 id="mensBievenida">Hola usuario!</h1>
             <span>Vamos a organizar tus tareas</span>
         </div>
 
