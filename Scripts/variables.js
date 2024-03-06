@@ -39,8 +39,8 @@ const variables = {
         const nuevaTarea = new Tarea(nombre, id, realizado, eliminado)
         this.list.push(nuevaTarea)
     },
-    changeCronStatus: function(){
-        this.cronStatus = !this.cronStatus
+    changeCronStatus: function(status){
+        this.cronStatus = status
     }
 }
 

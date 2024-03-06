@@ -2,16 +2,15 @@ import compTaskFromPom from "./compTaskFromPom.js";
 import variables from "./variables.js";
 
 const resumeCronometro = () => {
-    const taskSelect = document.querySelector("#selectTaskPom")
-    const numbTask = taskSelect.value
-    const element = document.querySelector('#taskList').querySelectorAll('li')[numbTask - 1].querySelectorAll('i')[0]
     let divCron = document.querySelector("#cronometro");
     const numeros = divCron.innerHTML.replace(/\s/g, '').split(':');
     let min = parseInt(numeros[0], 10);
     let seg = parseInt(numeros[1], 10);
     if (variables.cronStatus == true) {
+        const taskSelect = document.querySelector("#selectTaskPom")
+        const numbTask = taskSelect.value
+        const element = document.querySelector('#taskList').querySelectorAll('li')[numbTask - 1].querySelectorAll('i')[0]
         if (element.className == "far fa-circle") {
-            document.querySelector("#robotStatus").setAttribute("src", "img/workingRobot.gif")
             seg--
             if (seg < 0) {
                 seg = 60
@@ -29,18 +28,22 @@ const resumeCronometro = () => {
                 time = `0${min} : 0${seg}`
                 if (min == 0 && seg == 0) {
                     time = `25 : 00`
-                    variables.changeCronStatus()
-                    compTaskFromPom(taskSelect, numbTask, element)
-
+                    variables.changeCronStatus(false)
+                    compTaskFromPom(element)
+                    // document.querySelector("#robotStatus").setAttribute("src", "img/restingReobot.gif")
                 }
             }
             divCron.innerHTML = time
         } else {
             alert("La tarea elegida no puede estar terminada")
-            variables.changeCronStatus()
+            variables.changeCronStatus(false)
+            // document.querySelector("#robotStatus").setAttribute("src", "img/restingReobot.gif")
         }
     }
     else {
+        if (document.querySelector("#robotStatus").getAttribute("src") == "img/workingRobot.gif") {
+            document.querySelector("#robotStatus").setAttribute("src", "img/restingReobot.gif")
+        }
         return
     }
 

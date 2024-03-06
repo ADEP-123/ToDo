@@ -21,10 +21,10 @@ const addTask = (task, terminado) => {
             <option value="${variables.id}" id="p${variables.pomVarId}">${task}</option>
          `;
 
-        if (terminado == false) {
-            listPom.insertAdjacentHTML("beforeend", newElOption);
-            variables.incrasePomVarId()
-        }
+
+        listPom.insertAdjacentHTML("beforeend", newElOption);
+        variables.incrasePomVarId()
+
 
         variables.taskList.insertAdjacentHTML("beforeend", newElement);
         variables.pushList(task, variables.id, false, false);

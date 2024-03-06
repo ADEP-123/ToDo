@@ -7,10 +7,6 @@ const renderOldList = (data) => {
     let oldList = data;
     let oldId = 1;
     if (data) {
-        if (oldList.length > 1) {
-            oldId = oldList[oldList.length - 1].id + 1;
-        }
-
         oldList.forEach(element => {
             if (element.eliminado == false) {
                 addTask(element.nombre, element.realizado)
@@ -23,7 +19,9 @@ const renderOldList = (data) => {
     /*html*/`<img src="./img/loadingBot.gif" id="loadingBot">`
         )
     } else {
-        variables.setOldId(oldId)
+        if (oldList.length > 1) {
+            variables.setOldId(variables.list.length)
+        }
     }
 }
 

@@ -7,6 +7,7 @@ import currentTime from "./setTime.js";
 import iniciadorApp from "./iniciadorApp.js";
 import lectorLS from "./lectoLocalStorage.js";
 import resumeCronometro from "./resumeCron.js";
+import compTaskFromPom from "./compTaskFromPom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // Listener para iniciar la app
@@ -58,17 +59,34 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Cronometro
-    setInterval(resumeCronometro, 1000)
+    let cronInterval = null;
+
     document.querySelector("#panelCronometro").addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (e.target.id == "resCronBut") {
-            variables.changeCronStatus()
+            variables.changeCronStatus(true)
+            if (cronInterval !== null) clearInterval(cronInterval);
+            cronInterval = setInterval(resumeCronometro, 1000);
         } else if (e.target.id == "stopCronBut") {
-            variables.changeCronStatus()
+            variables.changeCronStatus(false)
+            if (cronInterval !== null) {
+                clearInterval(cronInterval);
+                cronInterval = null;
+            }
+        } else if (e.target.id == "comTaskButPom") {
+            variables.changeCronStatus(false)
+            if (cronInterval !== null) {
+                clearInterval(cronInterval);
+                cronInterval = null;
+            }
+            const taskSelect = document.querySelector("#selectTaskPom")
+            const numbTask = taskSelect.value
+            const element = document.querySelector('#taskList').querySelectorAll('li')[numbTask - 1].querySelectorAll('i')[0]
+            compTaskFromPom(element)
         }
-        if (variables.cronStatus == true) {
-            document.querySelector("#robotStatus").setAttribute("src", "img/restingReobot.gif")
+        if (cronInterval !== null) {
+            document.querySelector("#robotStatus").setAttribute("src", "img/workingRobot.gif")
         } else {
             document.querySelector("#robotStatus").setAttribute("src", "img/restingReobot.gif")
         }
