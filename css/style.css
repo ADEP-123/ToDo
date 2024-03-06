@@ -116,6 +116,7 @@ button:hover{
     font-size: 80px;
 }
 #panelSup{
+    margin-top: 150px;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -269,3 +270,23 @@ button:hover{
     width: 150px;
     transition: opacity 0.5s ease-in-out;
 }
+
+/* ---Mediaqueries--- */
+@media (max-width: 600px) {
+    #reloj, #mensBievenida{
+        font-size: 40px
+    }
+    #cronometro {
+        font-size: 20px;
+    }
+    h1{
+
+        font-size:medium;
+    }
+    p{
+        font-size: small;
+    }
+    .seccion-tarea li, .agregar-tarea{
+        padding: 5px;
+    }
+  }
