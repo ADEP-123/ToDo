@@ -28,4 +28,5 @@ Seccion en la que se despliega el saludo al usuario, la hora y la fecha actual
 ![Screen shot panel superior](./img/seccAPP.png)
 Seccion en la que se encuentran el panel de listas de tareas y el panel de pomodoro
 
-
+## Despliegue de aplicacion:
+https://adep-123.github.io/ToDo/
