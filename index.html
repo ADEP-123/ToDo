@@ -16,7 +16,7 @@
         <p>Por favor, ingresa tu nombre:</p>
         <form id="nameForm">
             <input type="text" id="userNameInput" placeholder="Tu nombre">
-            <button type="button" id="submitNameBtn">Continuar</button>
+            <button type="button" id="submitNameBtn" class="submitNameBtn">Continuar</button>
         </form>
     </div>
 
@@ -26,28 +26,60 @@
     </div>
 
     <!-- APP -->
-    <div class="container">
-        <div class="perfil">
-            <div id="fecHora">
-                <div id="reloj"></div>
-                <div id="fecha"></div>
+    <div id="panelSup">
+        <div id="fecHora">
+            <div id="reloj"></div>
+            <div id="fecha"></div>
+        </div>
+        <h1 id="mensBievenida">Hola usuario!</h1>
+    </div>
+
+    <div id="app">
+        <div class="container">
+            <div class="perfil">
+                <h1>Organizador</h1>
+
+                <span>Vamos a organizar tus tareas</span>
             </div>
-            <h1 id="mensBievenida">Hola usuario!</h1>
-            <span>Vamos a organizar tus tareas</span>
+
+            <div class="agregar-tarea">
+                <input type="text" id="inNewTask" placeholder="agregar nueva tarea">
+                <i id="butAddNewTask" class="fas fa-plus-circle"></i>
+            </div>
+
+            <div class="seccion-tarea">
+                <h3 id="taskTittle">Tareas Pendientes</h3>
+                <ul id="taskList">
+
+                </ul>
+            </div>
         </div>
+        <div class="container">
+            <div class="seccion-tarea">
+                <h1>Pomodoro</h1>
+                <p>Selecciona una tarea</p>
+                <select name="" id="selectTaskPom">
+                </select>
+            </div>
+            <div class="seccion-cronometro">
+                <div id="cronometro">
+                    00 : 10
+                </div>
 
-        <div class="agregar-tarea">
-            <input type="text" id="inNewTask" placeholder="agregar nueva tarea">
-            <i id="butAddNewTask" class="fas fa-plus-circle"></i>
-        </div>
+                <div id="panelCronometro">
+                    <button id="resCronBut">Resumir</button>
+                    <button id="stopCronBut">Parar</button>
+                    <button id="comTaskButPom">Completar tarea</button>
+                </div>
 
-        <div class="seccion-tarea">
-            <h3 id="taskTittle">Tareas Pendientes</h3>
-            <ul id="taskList">
+                <div id="estado">
+                    <img src="img/restingReobot.gif" id="robotStatus">
+                </div>
+            </div>
 
-            </ul>
         </div>
     </div>
+
 
     <script src="Scripts/index.js" type="module"></script>
 </body>

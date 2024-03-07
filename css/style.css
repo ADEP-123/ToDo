@@ -20,11 +20,25 @@ body{
     height: 100vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 input{
     color: black;
 }
+
+button{
+    border-radius: 8px;
+    color: black;
+    padding: 5px;
+    margin-top: 5px;
+}
+button:hover{
+    box-shadow: 1px 1px 20px var(--blue2);
+    cursor: pointer;
+}
+
 
 /* ---Vista inicial--- */
 .initial-view {
@@ -45,16 +59,6 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.initial-view button{
-    border-radius: 8px;
-    color: black;
-    padding: 5px;
-    margin-top: 5px;
-}
-.initial-view button:hover{
-    box-shadow: 1px 1px 20px var(--blue2);
-    cursor: pointer;
 }
 .initial-view input{
     margin: 5px;
@@ -84,7 +88,7 @@ input{
     from {
         opacity: 0;
     }
-
+    
     to {
         opacity: 1;
     }
@@ -95,16 +99,41 @@ input{
     max-height: 100%;
 }
 
-/* ---Perfil--- */
-.container {
-    display: none;
-    max-width: 80%;
-    width: 400px;
-    height: 600px;
-    margin: 0 auto;
+/* ---Panel superior--- */
+#fecHora{
+    color: var(--blue1);
+    display: flex;
+    text-shadow: 0 0 20px var(--blue2),  0 0 20px rgba(10, 175, 230, 0);
+    flex-direction: column-reverse;
+}
+#reloj{
     text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 70px;
+    padding: 5px 0;
+}
+#mensBievenida{
+    font-size: 80px;
+}
+#panelSup{
+    margin-top: 150px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ---panelSup--- */
+#panelSup{
+    height: 30%;
+}
+#app{
+    height: 70%;
+}
+#app, #panelSup{
+    margin: 0%;
+    display: none;
     opacity: 0;
-    animation: slideIn 0.5s forwards; /* Agrega una animación de deslizamiento */
+    animation: slideIn 0.5s forwards;
+    width: 100%;
 }
 
 @keyframes slideIn {
@@ -119,18 +148,18 @@ input{
     }
 }
 
-#fecHora{
-    color: var(--blue1);
+.container {
     display: flex;
-    text-shadow: 0 0 20px var(--blue2),  0 0 20px rgba(10, 175, 230, 0);
-    flex-direction: column-reverse;
-}
-#reloj{
+    flex-direction: column  ;
+    max-height: 100%;
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
     text-align: center;
-    letter-spacing: 0.05em;
-    font-size: 80px;
-    padding: 5px 0;
+
 }
+
+
 
 /* ---Agregar Tarea--- */
 .agregar-tarea {
@@ -170,6 +199,28 @@ input{
 
 
 /* ---Seccion Tarea--- */
+#taskList{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+}
+  
+::-webkit-scrollbar-track {
+  background: var(--black); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--white); 
+    border-radius: 6px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff65; 
+    transition: 1s;
+}
 
 #loadingBot{
     width: 100%;
@@ -216,3 +267,58 @@ input{
 }
 
 
+/* --Seccion pomodoro-- */
+#selectTaskPom {
+    text-align: center;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 10px;
+    color: var(--black);
+    margin: 5px 0;
+    width: 80%;
+    height: 70px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid black;
+}
+
+#selectTaskPom option {
+    color: var(--black);
+}
+
+#cronometro{
+    color: var(--blue1);
+    text-shadow: 0 0 20px var(--blue2),  0 0 20px rgba(10, 175, 230, 0);
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 40px;
+    padding: 5px 0;
+}
+#robotStatus{
+    width: 150px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ---Mediaqueries--- */
+@media (max-width: 600px) {
+    #reloj, #mensBievenida{
+        font-size: 40px
+    }
+    #cronometro {
+        font-size: 20px;
+    }
+    h1{
+
+        font-size:medium;
+    }
+    p{
+        font-size: small;
+    }
+    .seccion-tarea li, .agregar-tarea{
+        padding: 5px;
+    }
+    .agregar-tarea input{
+        font-size: small;
+    }
+  }
