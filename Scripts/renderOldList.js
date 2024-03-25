@@ -9,7 +9,7 @@ const renderOldList = (data) => {
     if (data) {
         oldList.forEach(element => {
             if (element.eliminado == false) {
-                addTask(element.nombre, element.realizado)
+                addTask(element.nombre, element.fechaTarea, element.realizado)
                 emptyRender = false;
             }
         });

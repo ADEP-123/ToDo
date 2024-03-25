@@ -4,6 +4,9 @@
     --red:#bb0000;
     --blue1:#daf6ff;
     --blue2:#0aafe6;
+    --whiteRed:#f3b7b7;
+    --whiteYellow:#f5f5b4;
+    --whiteGreen:#c0f5c7;
 }
 
 *{
@@ -168,7 +171,7 @@ button:hover{
     height: 70px;
     display: flex;
     align-items: center;
-    gap: 70px;
+    gap: 20px;
     padding: 10px;
     margin: 40px 0;
 }
@@ -180,8 +183,13 @@ button:hover{
     border: none;
     background-color: var(--white);
     padding-left: 10px;
-
 }
+
+#taskDate{
+    width: 7%;
+    padding-left: 0px;
+}
+
 .agregar-tarea input::placeholder {
    font-size: 1.1rem;
    color: black;
@@ -235,7 +243,7 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--white);
+    /* background: var(--white); */
     border-radius: 15px;
     padding: 10px;
     color: var(--black);
@@ -322,3 +330,16 @@ button:hover{
         font-size: small;
     }
   }
+
+/* Colorear tareas segun fecha a vencer */
+.nextToExpire{
+    background-color:var(--whiteRed);
+}
+.soonToExpire{
+    background-color:var(--whiteYellow);
+}
+.farToExpire{
+    background-color:var(--whiteGreen);
+}
+
+
